@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>แจ้งซ่อม</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #54e8d7;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: black;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      body {
+        font-size: 14px;
+      }
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .table-container {
+      margin-top: 20px;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .table th,
+    .table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .table th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .table tbody tr:hover {
+      background-color: #94eb65;
+    }
+
+    .btn {
+      margin: 5px;
+    }
+
+    .banner {
+      width: 100%;
+      max-width: 70%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Allocate data</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="Show.php">แสดงข้อมูล</a></li>
+        <li><a href="Add_page.php">เพิ่มข้อมูล</a></li>
+        <li><a href="repair_list.php">แสดงรายการซ่อม</a></li>
+        <li><a href="repair_form.html">เพิ่มข้อมูลการซ่อม</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <center>
+    <img src="banner.png" alt="BANNER" class="center img-responsive">
+</center>
+  <div class="container">
+    <h1 class="center">แจ้งซ่อม</h1>
+    <form method="post" action="submit_repair.php">
+      <div class="form-row">
+        <div class="col">
+          <label for="name">Name</label>
+          <input required type="text" name="name" class="form-control" placeholder="ชื่อบุคคลที่แจ้ง">
+
+          <label for="email">Email</label>
+          <input required type="text" name="email" class="form-control" placeholder="Email">
+
+          <label for="issue">Issue</label>
+          <textarea required name="issue" rows="1" class="form-control" placeholder="รายระเอียดปัญหา"></textarea>
+
+          <label for="device_code">รหัสอุปกรณ์</label>
+          <input required type="text" name="device_code" class="form-control" id="inputdevice_code" placeholder="รหัสอุปกรณ์">
+
+          <label for="inputdevice_type">ชนิดอุปกรณ์</label>
+          <select required name="device_type" id="device_type" class="form-control">
+            <option value="" selected disabled>ชนิดอุปกรณ์</option>
+            <option value="เมาส์(Mouse)">เมาส์(Mouse)</option>
+            <option value="จอแสดงผล(Monitor)">จอแสดงผล(Monitor)</option>
+            <option value="คีย์บอร์ด(Keyboard)">คีย์บอร์ด(Keyboard)</option>
+            <option value="คอมพิวเตอร์(Computer)">คอมพิวเตอร์(Computer)</option>
+          </select>
+
+          <div class="form-group">
+            <label for="inputroom">ห้อง</label>
+            <select required name="room" id="room" class="form-control">
+              <option value="" selected disabled>ห้อง</option>
+              <option value="Com1">Com1</option>
+              <option value="Com2">Com2</option>
+              <option value="Com3">Com3</option>
+              <option value="Com4">Com4</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</body>
+
+</html>
