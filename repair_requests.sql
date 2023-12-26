@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2023 at 01:16 PM
+-- Generation Time: Dec 26, 2023 at 12:50 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `repair_requests` (
   `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `issue` mediumtext DEFAULT NULL,
-  `device_code` varchar(255) DEFAULT NULL,
-  `device_type` varchar(255) DEFAULT NULL,
-  `room` varchar(255) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `issue` mediumtext NOT NULL,
+  `device_code` varchar(255) NOT NULL,
+  `device_type` varchar(255) NOT NULL,
+  `room` varchar(255) NOT NULL,
   `submitted_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `status` varchar(255) DEFAULT 'รอดำเนินการ'
+  `status` varchar(255) NOT NULL DEFAULT 'รอดำเนินการ'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `repair_requests` (
 --
 
 INSERT INTO `repair_requests` (`id`, `name`, `email`, `issue`, `device_code`, `device_type`, `room`, `submitted_at`, `status`) VALUES
-(1, 'Patrick Alexandrova', 'keng8923@gmail.com', 'lol', '101', 'เมาส์(Mouse)', 'Com1', '2023-12-17 12:04:41', 'รอดำเนินการ');
+(1, 'Patrick Alexandrova', 'keng8923@gmail.com', 'dwaw', '1011', 'คีย์บอร์ด(Keyboard)', 'Com1', '2023-12-17 15:24:55', 'รอดำเนินการ');
 
 --
 -- Indexes for dumped tables
